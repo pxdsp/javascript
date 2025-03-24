@@ -146,3 +146,34 @@ input {
     width: 100%;
     margin-top: 10px;
 }
+
+
+/*_____________________________ANIMATIE PEDALS____________________________________*/
+
+
+#pedal-fall {
+    animation: fallDown 3.5s cubic-bezier(0.4, 0.2, 0.2, 1) forwards;
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    20% {
+        transform: translateX(-15px) translateY(80px) rotate(-15deg);
+    }
+    40% {
+        transform: translateX(15px) translateY(180px) rotate(12deg);
+    }
+    60% {
+        transform: translateX(-10px) translateY(280px) rotate(-8deg);
+    }
+    80% {
+        transform: translateX(8px) translateY(360px) rotate(5deg);
+    }
+    100% {
+        transform: translateX(0px) translateY(420px) rotate(0deg);
+        opacity: 0;
+    }
+}
