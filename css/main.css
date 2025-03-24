@@ -1,0 +1,148 @@
+body {
+    background-color: #CEDA95;
+    font-family: "Windsor";
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+p {
+    line-height: 130%;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+
+/*_____________________________GAME SCREEN____________________________________*/
+
+
+
+.flower {
+    height: 80%;
+    position: absolute;
+    bottom:0;
+    left:50px;
+}
+
+.message-block {
+    background-color: #F1F2F2;
+    color:#689F38;
+    padding:50px;
+    border-radius: 30px;
+    border-right: 5px solid #E6E7E8;
+    border-bottom: 5px solid #E6E7E8;
+
+    position:absolute;
+    right:100px;
+    top:30%;
+}
+
+.message-block p {
+    text-align: center;
+    font-size: 3rem;
+}
+
+
+
+/*_____________________________OVERLAY START____________________________________*/
+
+.overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+.overlay.invisible {
+    display: none;
+}
+
+/* Pop-up box */
+.popup-start {
+    display:block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    width: 400px;
+}
+
+.invisible .popup-start {
+    display: none;
+}
+
+
+
+/* Title */
+.popup h2 {
+    color: #4a772f;
+    font-size: 22px;
+}
+
+/* Buttons */
+.gender-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+button {
+    border: none;
+    padding: 10px 30px;
+    border-radius: 30px;
+
+    font-size: 1.5rem;
+
+}
+
+.female-btn {
+    background: #6bb7ff;
+    color: white;
+}
+
+.male-btn {
+    background: #ff4d4d;
+    color: white;
+}
+
+.other-btn {
+    background: #ffbe42;
+    color: white;
+}
+
+/* Input field */
+input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px 0;
+
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Start Game Button */
+.start-btn {
+    background: #689F38;
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    margin-top: 10px;
+}
