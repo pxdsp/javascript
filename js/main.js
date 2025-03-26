@@ -4,7 +4,6 @@
 let gender = "";  //moet worden: she/he/they
 let crush = "";    //moet worden: naam v crush
 let subject = "";
-let result = false;
 
 const buttonStart = document.querySelector(".start-btn");
 const buttonFem = document.querySelector(".female-btn");
@@ -13,7 +12,6 @@ const buttonOth = document.querySelector(".other-btn");
 
 buttonStart.addEventListener("click", () => {
     crush = document.querySelector(".name-input").value;
-    console.log(crush);
     updateSubject();
 });
 
@@ -44,7 +42,7 @@ const genderButtons = document.querySelectorAll(".gender-buttons button");
 genderButtons.forEach(genderButton => {
     genderButton.addEventListener("click", () => {
         genderButtons.forEach(btn => btn.style.border = "none");
-        button.style.border = "2px solid black";
+        genderButton.style.border = "2px solid black";
     });
 });
 
@@ -64,6 +62,8 @@ buttonStart.addEventListener('click', () => {
 const pedals = document.querySelectorAll("#pedal");
 const message = document.querySelector(".message-block");
 
+let result = Math.random() < 0.5; //als kleiner is dan 0,5 is true en als groter is is false!
+let timer = 12; //aantal bladeren
 
 pedals.forEach((pedal) => {
     pedal.addEventListener("click", () => {
@@ -71,6 +71,17 @@ pedals.forEach((pedal) => {
 
         result = !result;
 
-        message.textContent = `test ${subject} `;
-    })
+        if (result === true) {
+            message.innerHTML = `<p style="color:689F38;">${subject} loves me<br>🥰</p>`;
+            timer--;
+        } else {
+            message.innerHTML = `<p style="color:EB4F26;">${subject} loves me not<br>😭</p>`;
+            timer--;
+        };
+
+        if (timer === 0) {
+            console.log("afgelopen");
+        }
+        
+    });
 })

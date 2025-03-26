@@ -22,7 +22,7 @@ main {
 
 
 .flower {
-    height: 80%;
+    /* height: 80%; */
     position: absolute;
     bottom:0;
     left:50px;
