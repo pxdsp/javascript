@@ -3,7 +3,7 @@
 
 let gender = "";  //moet worden: she/he/they
 let crush = "";    //moet worden: naam v crush
-let subject = "";
+let subject = "They";
 
 const buttonStart = document.querySelector(".start-btn");
 const buttonFem = document.querySelector(".female-btn");
@@ -31,8 +31,9 @@ buttonOth.addEventListener("click", () => {
 });
 
 function updateSubject() {
-    subject = crush ? crush : gender;  // als er een crush is, gebruik die, anders gebruik gender
-    console.log(subject)
+    if (crush || gender) { // wordt alleen overschrijven als een van de twee een waarde heeft
+        subject = crush ? crush : gender; // als er een crush is, gebruik die, anders gebruik gender
+    }  
 }
 
 //aangeklikte button krijgt styling
@@ -47,23 +48,31 @@ genderButtons.forEach(genderButton => {
 });
 
 
-// start van het spel!!
 
-const overlay = document.querySelector('.overlay');
- 
-buttonStart.addEventListener('click', () => {
-  overlay.classList.add("invisible");
-});
-
-
-//spelverloop pedals
-
+//spel
 
 const pedals = document.querySelectorAll("#pedal");
 const message = document.querySelector(".message-block");
+const endResult = document.querySelector(".end-message");
+const overlayStart = document.querySelectorAll('.overlay')[0];
+const overlayEnd = document.querySelectorAll('.overlay')[1];
+
 
 let result = Math.random() < 0.5; //als kleiner is dan 0,5 is true en als groter is is false!
 let timer = 12; //aantal bladeren
+
+
+overlayEnd.style.display = "none";
+
+// start van het spel!!
+buttonStart.addEventListener('click', () => {
+  overlayStart.style.display = "none";
+  overlayEnd.style.display = "none";
+});
+
+
+
+//spelverloop pedals
 
 pedals.forEach((pedal) => {
     pedal.addEventListener("click", () => {
@@ -79,9 +88,54 @@ pedals.forEach((pedal) => {
             timer--;
         };
 
-        if (timer === 0) {
-            console.log("afgelopen");
+        if (timer === 0 && result === true) {
+            overlayEnd.style.display = "flex";
+            endResult.innerHTML = `<h2>${subject} loves you!<br>🥰</h2>`;
         }
+        if (timer === 0 && result === false) {
+            overlayEnd.style.display = "flex";
+            endResult.innerHTML = `<h2>${subject} loves you not!<br>😭</h2>`;
+        }
+
+
+        //als subject they is... (uitzondering = "love zonder s")
+
+        if (subject === "They") {
+            if (result === true) {
+                message.innerHTML = `<p style="color:#689F38;">${subject} love me<br>🥰</p>`;
+            } else {
+                message.innerHTML = `<p style="color:#EB4F26;">${subject} love me not<br>😭</p>`;
+            };
+    
+            if (timer === 0 && result === true) {
+                overlayEnd.style.display = "flex";
+                endResult.innerHTML = `<h2>${subject} love you!<br>🥰</h2>`;
+            }
+            if (timer === 0 && result === false) {
+                overlayEnd.style.display = "flex";
+                endResult.innerHTML = `<h2>${subject} love you not!<br>😭</h2>`;
+            }
+
+        };
         
     });
 })
+
+
+// spel opnieuw starten
+
+const buttonReset = document.querySelector(".end-btn");
+
+buttonReset.addEventListener("click", restartGame);
+
+function restartGame() {
+    overlayStart.style.display = "flex";
+    overlayEnd.style.display = "none";
+
+    pedals.forEach((pedal) => {
+        pedal.classList.remove("fall");
+    });
+
+    result = Math.random() < 0.5; 
+    timer = 12;
+};
