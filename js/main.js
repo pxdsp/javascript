@@ -3,6 +3,8 @@
 
 let gender = "";  //moet worden: she/he/they
 let crush = "";    //moet worden: naam v crush
+let subject = "";
+let result = false;
 
 const buttonStart = document.querySelector(".start-btn");
 const buttonFem = document.querySelector(".female-btn");
@@ -31,9 +33,20 @@ buttonOth.addEventListener("click", () => {
 });
 
 function updateSubject() {
-    const subject = crush ? crush : gender;  // als er een crush is, gebruik die, anders gebruik gender
+    subject = crush ? crush : gender;  // als er een crush is, gebruik die, anders gebruik gender
     console.log(subject)
 }
+
+//aangeklikte button krijgt styling
+
+const genderButtons = document.querySelectorAll(".gender-buttons button");
+
+genderButtons.forEach(genderButton => {
+    genderButton.addEventListener("click", () => {
+        genderButtons.forEach(btn => btn.style.border = "none");
+        button.style.border = "2px solid black";
+    });
+});
 
 
 // start van het spel!!
@@ -47,3 +60,17 @@ buttonStart.addEventListener('click', () => {
 
 //spelverloop pedals
 
+
+const pedals = document.querySelectorAll("#pedal");
+const message = document.querySelector(".message-block");
+
+
+pedals.forEach((pedal) => {
+    pedal.addEventListener("click", () => {
+        pedal.classList.add("fall");
+
+        result = !result;
+
+        message.textContent = `test ${subject} `;
+    })
+})
