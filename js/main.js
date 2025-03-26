@@ -45,9 +45,12 @@ const genderButtons = document.querySelectorAll(".gender-buttons button");
 
 genderButtons.forEach(genderButton => {
     genderButton.addEventListener("click", () => {
-        genderButtons.forEach(btn => btn.style.border = "none");
-        genderButton.style.border = "2px solid black";
-    });
+        genderButtons.forEach(btn => {
+            btn.style.color = ""; 
+        });
+
+        genderButton.style.color = "white";
+      });
 });
 
 
@@ -93,11 +96,11 @@ pedals.forEach((pedal) => {
 
         if (timer === 0 && result === true) {
             overlayEnd.style.display = "flex";
-            endResult.innerHTML = `<h2>${subject} loves you!<br>🥰</h2>`;
+            endResult.innerHTML = `<h2 style="color:#689F38;">🥰<br>${subject} loves you!</h2>`;
         }
         if (timer === 0 && result === false) {
             overlayEnd.style.display = "flex";
-            endResult.innerHTML = `<h2>${subject} loves you not!<br>😭</h2>`;
+            endResult.innerHTML = `<h2 style="color:#EB4F26;">😭<br>${subject} loves you not!</h2>`;
         }
 
 
@@ -112,11 +115,11 @@ pedals.forEach((pedal) => {
     
             if (timer === 0 && result === true) {
                 overlayEnd.style.display = "flex";
-                endResult.innerHTML = `<h2>${subject} love you!<br>🥰</h2>`;
+                endResult.innerHTML = `<h2 style="color:#689F38;">🥰<br>${subject} love you!</h2>`;
             }
             if (timer === 0 && result === false) {
                 overlayEnd.style.display = "flex";
-                endResult.innerHTML = `<h2>${subject} love you not!<br>😭</h2>`;
+                endResult.innerHTML = `<h2 style="color:#EB4F26;">😭<br>${subject} love you not!</h2>`;
             }
 
         };
