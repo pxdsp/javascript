@@ -72,10 +72,10 @@ pedals.forEach((pedal) => {
         result = !result;
 
         if (result === true) {
-            message.innerHTML = `<p style="color:689F38;">${subject} loves me<br>🥰</p>`;
+            message.innerHTML = `<p style="color:#689F38;">${subject} loves me<br>🥰</p>`;
             timer--;
         } else {
-            message.innerHTML = `<p style="color:EB4F26;">${subject} loves me not<br>😭</p>`;
+            message.innerHTML = `<p style="color:#EB4F26;">${subject} loves me not<br>😭</p>`;
             timer--;
         };
 
