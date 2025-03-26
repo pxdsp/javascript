@@ -65,7 +65,7 @@ const overlayEnd = document.querySelectorAll('.overlay')[1];
 
 
 let result = Math.random() < 0.5; //als kleiner is dan 0,5 is true en als groter is is false!
-let timer = 4; //aantal bladeren
+let timer = 12; //aantal bladeren
 
 
 overlayEnd.style.display = "none";
@@ -145,5 +145,5 @@ function restartGame() {
     message.innerHTML = `<p>Do they?<br>Click a pedal to find out! <br>😇</p>`;
 
     result = Math.random() < 0.5; 
-    timer = 4;
+    timer = 12;
 };
