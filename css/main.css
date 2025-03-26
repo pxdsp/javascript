@@ -108,10 +108,7 @@ svg {
     z-index: 2;
     width: 700px;
     text-align: center;
-}
-
-.invisible .popup-start {
-    display: none;
+    animation: popup-in 0.6s ease-out;
 }
 
 
@@ -137,6 +134,12 @@ button {
 
     font-size: 1.8rem;
     cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+    color:white;
 }
 
 .gender-buttons {
@@ -224,7 +227,9 @@ input::placeholder {
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 2;
-    width: 7p00px;
+    width: 700px;
+    animation: popup-in 0.6s ease-out;
+
 }
 
 
@@ -274,5 +279,26 @@ input::placeholder {
     100% {
         transform: translateX(0px) translateY(420px) rotate(0deg);
         opacity: 0;
+    }
+}
+
+
+/*_____________________________EXTRA ANIMATIES____________________________________*/
+
+
+
+/* animatie containers */
+
+@keyframes popup-in {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    80% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
     }
 }
