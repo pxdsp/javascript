@@ -1,3 +1,6 @@
+
+
+
 //opslaan van gender of naam!! hoe zorg ik ervoor dat de gender of naam ook wordt opgeslagen buiten de functie??
 
 
@@ -59,7 +62,7 @@ const overlayEnd = document.querySelectorAll('.overlay')[1];
 
 
 let result = Math.random() < 0.5; //als kleiner is dan 0,5 is true en als groter is is false!
-let timer = 12; //aantal bladeren
+let timer = 4; //aantal bladeren
 
 
 overlayEnd.style.display = "none";
@@ -136,6 +139,8 @@ function restartGame() {
         pedal.classList.remove("fall");
     });
 
+    message.innerHTML = `<p>Do they?<br>Click a pedal to find out! <br>😇</p>`;
+
     result = Math.random() < 0.5; 
-    timer = 12;
+    timer = 4;
 };

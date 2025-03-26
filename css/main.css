@@ -16,15 +16,23 @@ p {
 main {
     display: flex;
     flex-direction: row;
+    height: 100vh;
+}
+
+svg {
+    overflow: visible;
 }
 
 
 /*_____________________________GAME SCREEN____________________________________*/
 
-
+.game-container {
+    height: 100vh;
+}
 
 .flower {
     /* height: 80%; */
+    margin-top:100px;
     position: absolute;
     bottom:0;
     left:50px;
@@ -95,9 +103,13 @@ main {
 
 
 /* Title */
-.popup h2 {
-    color: #4a772f;
-    font-size: 22px;
+.popup-start h2 {
+    color: #689F38;
+    font-size: 4rem;
+    text-transform: uppercase;
+    line-height: 120%;
+
+    margin: 20px 0 50px 0;
 }
 
 /* Buttons */
