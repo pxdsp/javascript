@@ -7,11 +7,18 @@ body {
 
 
 h2 {
+    color: #689F38;
     font-size: 4rem;
+    text-transform: uppercase;
+    line-height: 120%;
+
+    margin: 20px 0 0px 0;
+    text-align: center;
 }
 
 p {
-    line-height: 130%;
+    line-height: 120%;
+    color:#F8BA35;
 }
 
 main {
@@ -32,11 +39,10 @@ svg {
 }
 
 .flower {
-    /* height: 80%; */
     margin-top:100px;
     position: absolute;
     bottom:0;
-    left:50px;
+    left:0;
 }
 
 #pedal {
@@ -52,8 +58,9 @@ svg {
     border-bottom: 5px solid #E6E7E8;
 
     position:absolute;
-    right:100px;
+    right:15%;
     top:30%;
+    width: 500px;
 }
 
 .message-block p {
@@ -110,13 +117,7 @@ svg {
 
 
 /* Title & text */
-h2 {
-    color: #689F38;
-    font-size: 4rem;
-    text-transform: uppercase;
-    line-height: 120%;
-
-    margin: 20px 0 0px 0;
+.popup-start h2 {
     width: 400px;
     
 }
@@ -223,7 +224,7 @@ input::placeholder {
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 2;
-    width: 700px;
+    width: 7p00px;
 }
 
 
