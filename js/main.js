@@ -82,7 +82,9 @@ buttonStart.addEventListener('click', () => {
 
 pedals.forEach((pedal) => {
     pedal.addEventListener("click", () => {
+        if (pedal.classList.contains("fall")) return; //zodat je niet 2x op  hetzelfde blaadje kan drukken
         pedal.classList.add("fall");
+        
 
         result = !result;
 
