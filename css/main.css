@@ -348,7 +348,8 @@ input::placeholder {
     }
 
     .popup-start h2, .popup-end h2 {
-        font-size: 2.5rem; /* Maak titels iets kleiner */
+        font-size: 3rem; /* Maak titels iets kleiner */
+        max-width: 23rem;
     }
 
     .popup-start p, .popup-end p {
