@@ -304,3 +304,73 @@ input::placeholder {
         transform: translate(-50%, -50%) scale(1);
     }
 }
+
+
+
+/*_____________________________RESPONSIVE OP MOBILE____________________________________*/
+
+
+@media (max-width: 768px) {
+    .game-container {
+        display: flex;
+        flex-direction: column-reverse; /* Zet de layout in een kolom */
+        align-items: center; /* Centreert alles */
+        justify-content: space-between;
+        max-height: 100vh;
+    }
+
+    .message-block {
+        position: static; /* Haalt de absolute positioning weg */
+        width: 90%; /* Past de breedte aan voor kleine schermen */
+        margin: 2rem auto; /* Zorgt voor nette spacing */
+        padding: 2rem;
+    }
+
+    .flower {
+        position: static; /* Zorgt dat de bloem normaal in de flow blijft */
+        margin-top: 2rem; /* Ruimte tussen message block en bloem */
+        display: flex;
+        justify-content: center;
+        max-width: 100vw;
+        max-height: 65%;
+        padding-right: 50px;
+    }
+
+    .flower svg {
+        max-width: 70%; /* Zorgt dat de bloem niet te groot wordt */
+        height: 70%;
+        height: auto;
+    }
+
+    .popup-start, .popup-end {
+        width: 90%; /* Zorgt dat de pop-ups goed passen */
+        padding: 1rem;
+    }
+
+    .popup-start h2, .popup-end h2 {
+        font-size: 2.5rem; /* Maak titels iets kleiner */
+    }
+
+    .popup-start p, .popup-end p {
+        font-size: 2rem; /* Betere leesbaarheid op mobiel */
+    }
+
+    button {
+        font-size: 1.6rem; /* Iets kleiner voor touchscreens */
+        padding: 0.5rem 1.2rem;
+    }
+
+    input {
+        width: 100%; /* Zorgt dat inputvelden goed schalen */
+        font-size: 1.6rem;
+    }
+
+    .gender-buttons {
+        flex-direction: row; /* Zet de buttons onder elkaar op mobiel */
+        gap: 0.5rem;
+    }
+
+    .message-block p {
+        font-size: 2.5rem; /* Maak de tekst iets kleiner */
+    }
+}
