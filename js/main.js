@@ -80,13 +80,6 @@ function startGame() {
 
 buttonStart.addEventListener("click", startGame);
 
-document.addEventListener("keydown", () => {
-    if (event.key === "Enter") {
-        startGame();
-    }
-}) //dit werkt wel niet voor het laatste kader... om opnieuw te beginnen
-
-
 
 //spelverloop pedals
 
