@@ -9,3 +9,13 @@ In de documentatie (readme.md) moet je vermelden:
 Welke AI-tools je hebt gebruikt.
 Hoe ze je hebben geholpen (bijv. uitleg over een concept).
 Welke stukken code je zelf hebt geschreven.
+
+
+
+
+- hartanimatie gebaseerd op https://codesandbox.io/p/sandbox/heart-rain-id0oy?file=%2Fsrc%2Findex.js%3A23%2C5-23%2C10 
+
+
+- ai gebruikt voor keyframe animaties, aangepast waar nodig.
+
+- 
