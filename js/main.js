@@ -1,7 +1,7 @@
 
 
 
-//opslaan van gender of naam!! hoe zorg ik ervoor dat de gender of naam ook wordt opgeslagen buiten de functie??
+//opslaan van gender of naam
 
 
 let gender = "";  //moet worden: she/he/they
@@ -66,7 +66,7 @@ const pluckSound = document.getElementById("pluck-sound");
 
 
 let result = Math.random() < 0.5; //als kleiner is dan 0,5 is true en als groter is is false!
-let timer = 12; //aantal bladeren
+let timer = 4; //aantal bladeren
 
 
 overlayEnd.style.display = "none";
@@ -111,10 +111,12 @@ pedals.forEach((pedal) => {
         if (timer === 0 && result === true) {
             overlayEnd.style.display = "flex";
             endResult.innerHTML = `<h2 style="color:#689F38;">🥰<br>${subject} loves you!</h2>`;
+            emojiTest(result);
         }
         if (timer === 0 && result === false) {
             overlayEnd.style.display = "flex";
             endResult.innerHTML = `<h2 style="color:#EB4F26;">😭<br>${subject} loves you not!</h2>`;
+            emojiTest(result);
         }
 
 
@@ -159,5 +161,38 @@ function restartGame() {
     message.innerHTML = `<p>Do they?<br>Click a pedal to find out! <br>😇</p>`;
 
     result = Math.random() < 0.5; 
-    timer = 12;
+    timer = 4;
+};
+
+
+
+//hartjes animatie!!!!!!
+
+function emojiTest(result) {
+    let heartInterval = setInterval(() => createHeart(result), 100); // Geef 'result' door naar createHeart
+
+    setTimeout(() => {
+        clearInterval(heartInterval); // Stop hartjesregen na 2 seconden
+    }, 2000);
+}
+
+function createHeart(result) {
+    const heart = document.createElement("span");
+
+    // Kies het hart op basis van de uitkomst
+    heart.innerText = result ? "❤️" : "💔";  // Gebroken hartje voor negatief resultaat
+
+    heart.classList.add("heart");
+
+    // Willekeurige startpositie
+    heart.style.left = Math.random() * 100 + "vw";
+    
+    // Willekeurige snelheid
+    heart.style.animationDuration = Math.random() * 5 + 3 + "s"; 
+    
+    document.body.appendChild(heart);
+    
+    setTimeout(() => {
+        heart.remove();
+    }, 2000);
 };
