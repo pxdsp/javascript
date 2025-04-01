@@ -17,10 +17,10 @@ Het concept is dat de gebruiker het bekende spelletje kan spelen waarbij die via
 
 ### 1. Opslaan van Gender of Naam; regel 1-40
 
-De gebruiker kiest om een gender-button aan te duiden, of een naam mee te geven via inputveld. Wanneer de gebruiker een button aanklikt, wordt de string "she", "he" of "they" onthouden als gender, als die een naam input geeft, wordt de naam als crush onthouden. Nu kiezen we om in 'let subject' de crush op te slaan, tenzij die geen input heeft, dan wordt he/she/they opgeslagen. Wanneer de gebruiker helemaal niet ingeeft, wordt de string "they" gebruikt.
+De gebruiker kiest om een gender-button aan te duiden, of een naam mee te geven via inputveld. Wanneer de gebruiker een button aanklikt, wordt de string "she", "he" of "they" onthouden als gender. Als die een naam als input geeft, wordt de naam als crush onthouden. Nu kiezen we om in 'let subject' de crush op te slaan, tenzij die geen input heeft, dan wordt het gender he/she/they opgeslagen. Wanneer de gebruiker helemaal niets ingeeft en direct het spel begint, wordt de string "they" gebruikt.
 
 
-### 2. Aangeklikte button krijgt styling; regel 41-57
+### 2. Clicked button krijgt styling; regel 41-57
 
 Zodat het duidelijk is op welke button gedrukt is en die dus een enkele waarde meekrijgt, wordt de aangeklikte button gestyled.
 
@@ -28,8 +28,10 @@ Zodat het duidelijk is op welke button gedrukt is en die dus een enkele waarde m
 ### 3. Voorbereiding spelcode - alle variabelen; regel 58-73
 
 Opslaan van alle benodigde variabelen uit de HTML code.
+
 Ook gaan we zorgen dat de result at random true of false is, door te controleren of een random getal tussen 0-1 die kleiner is dan 0,5 of niet.
-We zetten een timer op het aantal bladeren, zodat we later een actie laten gebreuren wanneer die afloopt.
+
+We zetten een timer op het aantal bladeren, zodat we later een actie laten gebeuren wanneer die afloopt.
 
 
 ### 4. Start van het spel; regel 74-90
@@ -76,4 +78,4 @@ Wanneer de game ten einde is en de pop-up verschijnt met het resultaat, verschij
 - Hartanimatie bij afloop spel is gebaseerd op deze code die ik online vond: https://codesandbox.io/p/sandbox/heart-rain-id0oy?file=%2Fsrc%2Findex.js%3A23%2C5-23%2C10 
 - Ik heb ai gebruikt om gedetaileerde keyframe animaties te genereren in CSS, en heb die dan aangepast waar nodig. 
 - Ik heb mijn pixel-waarden in CSS in 1x naar rem overgezet, via chatgpt. 
-- 
+
