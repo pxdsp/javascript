@@ -69,9 +69,9 @@ let result = Math.random() < 0.5; //als kleiner is dan 0,5 is true en als groter
 let timer = 12; //aantal bladeren
 
 
-overlayEnd.style.display = "none";
-
 // start van het spel!!
+
+overlayEnd.style.display = "none";
 
 function startGame() {
     overlayStart.style.display = "none";
@@ -84,7 +84,7 @@ document.addEventListener("keydown", () => {
     if (event.key === "Enter") {
         startGame();
     }
-})
+}) //dit werkt wel niet voor het laatste kader... om opnieuw te beginnen
 
 
 
@@ -111,12 +111,12 @@ pedals.forEach((pedal) => {
         if (timer === 0 && result === true) {
             overlayEnd.style.display = "flex";
             endResult.innerHTML = `<h2 style="color:#689F38;">🥰<br>${subject} loves you!</h2>`;
-            emojiTest(result);
+            emojiRain(result);
         }
         if (timer === 0 && result === false) {
             overlayEnd.style.display = "flex";
             endResult.innerHTML = `<h2 style="color:#EB4F26;">😭<br>${subject} loves you not!</h2>`;
-            emojiTest(result);
+            emojiRain(result);
         }
 
 
@@ -130,11 +130,9 @@ pedals.forEach((pedal) => {
             };
     
             if (timer === 0 && result === true) {
-                overlayEnd.style.display = "flex";
                 endResult.innerHTML = `<h2 style="color:#689F38;">🥰<br>${subject} love you!</h2>`;
             }
             if (timer === 0 && result === false) {
-                overlayEnd.style.display = "flex";
                 endResult.innerHTML = `<h2 style="color:#EB4F26;">😭<br>${subject} love you not!</h2>`;
             }
 
@@ -147,7 +145,6 @@ pedals.forEach((pedal) => {
 // spel opnieuw starten
 
 const buttonReset = document.querySelector(".end-btn");
-
 buttonReset.addEventListener("click", restartGame);
 
 function restartGame() {
@@ -168,11 +165,11 @@ function restartGame() {
 
 //hartjes animatie!!!!!!
 
-function emojiTest(result) {
-    let heartInterval = setInterval(() => createHeart(result), 100); // Geef 'result' door naar createHeart
+function emojiRain(result) {
+    let heartInterval = setInterval(() => createHeart(result), 100); 
 
     setTimeout(() => {
-        clearInterval(heartInterval); // Stop hartjesregen na 2 seconden
+        clearInterval(heartInterval); 
     }, 2000);
 }
 
