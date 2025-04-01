@@ -62,6 +62,7 @@ const message = document.querySelector(".message-block");
 const endResult = document.querySelector(".end-message");
 const overlayStart = document.querySelectorAll('.overlay')[0];
 const overlayEnd = document.querySelectorAll('.overlay')[1];
+const pluckSound = document.getElementById("pluck-sound");
 
 
 let result = Math.random() < 0.5; //als kleiner is dan 0,5 is true en als groter is is false!
@@ -71,10 +72,19 @@ let timer = 12; //aantal bladeren
 overlayEnd.style.display = "none";
 
 // start van het spel!!
-buttonStart.addEventListener('click', () => {
-  overlayStart.style.display = "none";
-  overlayEnd.style.display = "none";
-});
+
+function startGame() {
+    overlayStart.style.display = "none";
+    overlayEnd.style.display = "none";
+}
+
+buttonStart.addEventListener("click", startGame);
+
+document.addEventListener("keydown", () => {
+    if (event.key === "Enter") {
+        startGame();
+    }
+})
 
 
 
@@ -84,7 +94,9 @@ pedals.forEach((pedal) => {
     pedal.addEventListener("click", () => {
         if (pedal.classList.contains("fall")) return; //zodat je niet 2x op  hetzelfde blaadje kan drukken
         pedal.classList.add("fall");
-        
+
+        pluckSound.currentTime = 0; // reset het geluid, zodat het opnieuw kan spelen
+        pluckSound.play(); // speelt het pluk-geluid af
 
         result = !result;
 
