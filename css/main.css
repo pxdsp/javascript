@@ -20,11 +20,11 @@ p {
     color:hsl(41, 93%, 59%);
 }
 
-main {
+/* main {
     display: flex;
     flex-direction: row;
-    height: 100vh;
-}
+    min-height: 100vh;
+} */
 
 svg {
     overflow: visible;
@@ -33,9 +33,9 @@ svg {
 
 /*_____________________________GAME SCREEN____________________________________*/
 
-.game-container {
+/* .game-container {
     height: 100vh;
-}
+} */
 
 .flower {
     margin-top:6.25rem;
@@ -44,11 +44,11 @@ svg {
     left:0;
 }
 
-#pedal {
+.pedal {
     cursor: pointer;
 }
 
-#pedal:hover {
+.pedal:hover {
     transform: scale(1.01);
 }
 
@@ -310,50 +310,46 @@ input::placeholder {
 /*_____________________________RESPONSIVE OP MOBILE____________________________________*/
 
 
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
     .game-container {
         display: flex;
-        flex-direction: column-reverse; /* Zet de layout in een kolom */
-        align-items: center; /* Centreert alles */
+        flex-direction: column; 
+        align-items: center; 
         justify-content: space-between;
-        max-height: 100vh;
+        min-height: 100vh;
     }
 
     .message-block {
-        position: static; /* Haalt de absolute positioning weg */
-        width: 90%; /* Past de breedte aan voor kleine schermen */
-        margin: 2rem auto; /* Zorgt voor nette spacing */
-        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+        justify-content: center;
+
+        position: sticky;
+        bottom:1rem;
+        right:auto; 
+        width: 90%; 
+        margin: 2rem auto; 
+        min-height: 300px;
     }
 
     .flower {
-        position: static; /* Zorgt dat de bloem normaal in de flow blijft */
-        margin-top: 2rem; /* Ruimte tussen message block en bloem */
-        display: flex;
-        justify-content: center;
+        position: static; 
         max-width: 100vw;
-        max-height: 65%;
+        height: 500px;
         padding-right: 50px;
+        margin-top:20px;
     }
 
     .flower svg {
-        max-width: 70%; /* Zorgt dat de bloem niet te groot wordt */
+        max-width: 70%; 
         height: 70%;
         height: auto;
     }
 
     .popup-start, .popup-end {
-        width: 90%; /* Zorgt dat de pop-ups goed passen */
+        width: 90%; 
         padding: 1rem;
-    }
-
-    .popup-start h2, .popup-end h2 {
-        font-size: 3rem; /* Maak titels iets kleiner */
-        max-width: 23rem;
-    }
-
-    .popup-start p, .popup-end p {
-        font-size: 2rem; /* Betere leesbaarheid op mobiel */
     }
 
     button {
@@ -375,6 +371,7 @@ input::placeholder {
         font-size: 2.5rem; /* Maak de tekst iets kleiner */
     }
 }
+
 
 
 /* hartjes */

@@ -159,7 +159,7 @@ function restartGame() {
 //hartjes animatie!!!!!!
 
 function emojiRain(result) {
-    let heartInterval = setInterval(() => createHeart(result), 100); 
+    const heartInterval = setInterval(() => createHeart(result), 100); 
 
     setTimeout(() => {
         clearInterval(heartInterval); 
